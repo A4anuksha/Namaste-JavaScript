@@ -1,8 +1,15 @@
-getName();
-console.log(10);
-console.log(getName);
+var x =1 ;
+a();
+b();
+console.log(x);
 
-function getName(){
-    console.log("Namaste JavaScript");
+function a(){
+    var x = 10;
+    console.log(x);
+}
+
+function b(){
+    var x = 100;
+    console.log(x);
 }
 
