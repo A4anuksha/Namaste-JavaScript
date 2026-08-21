@@ -1,10 +1,17 @@
-const c=5;//must be initialized at the time of declaration
-//Uncaught SyntaxError: Missing initializer in const declaration
+var a =100;
+let b = 100;
+const c= 50;
+function x(){
+    var a=10;//shadowing outer var a
+    let b = 20;
+    const c = 30;
+    console.log(a);//10
+    console.log(b);//20
+    console.log(c);//30
+}
+x();
+    console.log(a);//10
+    console.log(b);//ReferenceError:b not defined//can't access outside the block
+    console.log(c);//ReferenceError:c not defined
 
-let a=10;//can't redeclare in the same scope
-//Uncaught SyntaxError: Identifier 'a' has already been declared
 
-var b=100;
-var b =4;
-var b =10;
-console.log(b);
