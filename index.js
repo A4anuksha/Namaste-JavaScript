@@ -1,11 +1,22 @@
+// function x(){
+//     for(let i=1;i<=5;i++){
+//     setTimeout(function(){
+//         console.log(i);
+//     },i *1000)
+//     }
+// }
+// x();
+
+//same using var
+
 function x(){
-    var a =7;
-    function y(){
-        console.log(a);
+    for(var i=1;i<=5;i++){
+        function close(x){
+            setTimeout(function(){
+            console.log(x);
+            },i *1000);
+        }
+        close(i);
     }
-    a=100;
-    return y;
 }
-var z = x();
-console.log(z);
-z();
+x();
