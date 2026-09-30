@@ -1,22 +1,31 @@
-// function x(){
-//     for(let i=1;i<=5;i++){
-//     setTimeout(function(){
-//         console.log(i);
-//     },i *1000)
+// function outest(){
+//     var c=20;
+//     function outer(b){
+
+//         function inner(){
+//             console.log(a,b,c);
+//         }
+//         let a=10;
+//         return inner;
 //     }
+//     return outer;
 // }
-// x();
+// let a =100;
+// var close = outest()("Hello World");
+// close();
 
-//same using var
+//Example of Data Hiding and encapsulation
 
-function x(){
-    for(var i=1;i<=5;i++){
-        function close(x){
-            setTimeout(function(){
-            console.log(x);
-            },i *1000);
-        }
-        close(i);
+function counter(){
+    var count = 0;
+    return function incrementCounter(){
+        count++;
+        console.log(count);
     }
 }
-x();
+
+var counter1 = counter();
+counter1();
+counter1();
+
+var counter2 = counter();
