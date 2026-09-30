@@ -1,31 +1,30 @@
-// function outest(){
-//     var c=20;
-//     function outer(b){
-
-//         function inner(){
-//             console.log(a,b,c);
-//         }
-//         let a=10;
-//         return inner;
-//     }
-//     return outer;
-// }
-// let a =100;
-// var close = outest()("Hello World");
-// close();
-
-//Example of Data Hiding and encapsulation
-
-function counter(){
-    var count = 0;
-    return function incrementCounter(){
-        count++;
-        console.log(count);
-    }
+//function Statement or function declaration
+function a(){
+    console.log("a called");
 }
+a();
 
-var counter1 = counter();
-counter1();
-counter1();
+//Function Expression
+var b = function(){
+    console.log("b called");
+}
+b();
 
-var counter2 = counter();
+//Anonymous Function
+var c = function(){
+    console.log("c called");
+}
+c();
+
+//Named Function Expression
+var d = function dog(){
+    console.log("d called");
+}
+d();
+
+//Difference between parameters and arguments
+var e= function (param1, param2){
+    console.log("param1: " + param1);
+    console.log("param2: " + param2);
+}
+e("arg1", "arg2");
