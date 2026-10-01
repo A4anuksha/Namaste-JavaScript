@@ -1,30 +1,22 @@
-//function Statement or function declaration
-function a(){
-    console.log("a called");
-}
-a();
+//What is a callback function?
 
-//Function Expression
-var b = function(){
-    console.log("b called");
+setTimeout(function(){
+    console.log("timer");
+},5000);
+function x(y){
+    console.log("x");
+    y();
 }
-b();
+x(function y(){
+    console.log("y");
+});
 
-//Anonymous Function
-var c = function(){
-    console.log("c called");
-}
-c();
 
-//Named Function Expression
-var d = function dog(){
-    console.log("d called");
+//Closures Demo with Event Listeners
+function attachEventListener(){
+    let count = 0;
+    document.getElementById("clickme")
+    .addEventListener("click", function xyz(){
+        console.log("Button Clicked",++count);
+    } );
 }
-d();
-
-//Difference between parameters and arguments
-var e= function (param1, param2){
-    console.log("param1: " + param1);
-    console.log("param2: " + param2);
-}
-e("arg1", "arg2");
