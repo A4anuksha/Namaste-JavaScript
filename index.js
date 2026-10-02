@@ -1,22 +1,33 @@
-//What is a callback function?
+//Trying to block the main thread using while loop
 
-setTimeout(function(){
-    console.log("timer");
+console.log("Start");
+
+setTimeout(()=>{
+    console.log("Callback");
 },5000);
-function x(y){
-    console.log("x");
-    y();
+
+console.log("End");
+
+//trying to create millions of line being executed effect
+let startDate = new Date().getTime();
+let endDate = startDate;
+
+while(endDate < startDate + 10000){
+    endDate = new Date().getTime();
 }
-x(function y(){
-    console.log("y");
-});
+
+console.log("While loop finished");
 
 
-//Closures Demo with Event Listeners
-function attachEventListener(){
-    let count = 0;
-    document.getElementById("clickme")
-    .addEventListener("click", function xyz(){
-        console.log("Button Clicked",++count);
-    } );
+//Trying to differ some code using setTimeout of 0ms
+
+console.log("Start");
+
+function cb(){
+    console.log("Callback");
 }
+
+setTimeout(cb,0);
+
+
+console.log("End");
